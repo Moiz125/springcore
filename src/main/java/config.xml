@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:c="http://www.springframework.org/schema/c"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+https://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.springcore.Student" name="student1">
+		<property name="studentId" value="125"> 
+		</property>
+		<property name="name">
+		<value>Muhammad Moiz</value>
+		</property>
+		<property name="studentAddress">
+		<value>House no#H-01</value>
+		</property>
+		<property name="subject">
+			<list>
+				<value>C++</value>
+				<value>Java</value>
+				<value>Discrete Structures</value>
+			</list>
+		</property>
+		<property name="dept">
+		<ref bean="dept" />
+		</property>
+			
+	</bean>
+
+	<bean class="com.springcore.Student" name="student2" p:dept-ref="dept" p:studentId="63" p:name="Jawad" p:studentAddress="Hyderabad" />
+	
+	<bean class="com.springcore.Dept" name="dept">
+		<property name="name" value="SWE"/>
+	</bean>
+	
+	<bean class="com.springcore.Test" name="test1">
+		<constructor-arg value="125" type="int"/>
+		<constructor-arg value="MoiZ"/>
+		<constructor-arg ref="dept" />
+		<constructor-arg>
+		<list>
+			<value>a</value>
+			<value>b</value>
+			<value>c</value>
+		</list>
+		</constructor-arg>
+	</bean>
+	<bean class="com.springcore.Test" name="product">
+	<constructor-arg value="5" type="int" index="1"/>
+	<constructor-arg value="3" type="int" index="0"/>
+	</bean>
+	
+</beans>

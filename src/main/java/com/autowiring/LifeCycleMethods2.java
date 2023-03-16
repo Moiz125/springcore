@@ -1,0 +1,35 @@
+package com.autowiring;
+
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class LifeCycleMethods2{
+	private String var;
+
+
+	public LifeCycleMethods2() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public LifeCycleMethods2(String var) {
+		super();
+		this.var = var;
+	}
+
+	public String getVar() {
+		return var;
+	}
+	
+	public void setVar(String var) {
+		this.var = var;
+	}
+
+	@Override
+	public String toString() {
+		return "[var=" + var + "]";
+	}
+
+
+	
+}
